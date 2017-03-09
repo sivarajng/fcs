@@ -1,43 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <% include ./partials/header.ejs %>
+  <% include ./partials/head.ejs %>
 </head>
 <body>
 
-<% include ./partials/nav.ejs %>
-<div class="jumbotron text-center">
-  <h1>SR!SH</h1>
-  <img src="images/lang-logo.png"/>
-  <li>Career Action Sheet</li> 
-  <% include ./partials/h.ejs %>
-</div>
+<% include ./partials/header.ejs %>
+
   
-<div class="container">
+<div class="container" style="margin-top:60px;">
   <div class="row">
     <div class="col-sm-3">
-      <h3>Primary</h3>
-	  <ul>
-      <li>Core Java</li>
-      <li>MEAN Stack</li>
-      <li>NodeJS</li>
-      <li>AngularJS 2</li>
-      <li>MongoDB</li>
-	  </ul>
-     
+		<md-card>
+		<md-card-header style="background-color:#999999;">
+		<h4>Primary</h4>
+		<md-title>
+		</md-title>
+		</md-card-header>
+		<md-content>
+		<ul>
+		  <li>Core Java</li>
+		  <li>MEAN Stack</li>
+		  <li>NodeJS</li>
+		  <li>AngularJS 2</li>
+		  <li>MongoDB</li>
+		  </ul>
+		</md-content>
+		</md-card>
     </div>
+	
     <div class="col-sm-3">
-      <h3>Seconday</h3>
-	    <ul>
+			<md-card>
+		<md-card-header style="background-color:#999999;">
+		<h4>Seconday</h4>
+		<md-title>
+		</md-title>
+		</md-card-header>
+		<md-content>
+		<ul>
       <li>Bootstarp</li>
       <li>Scala / Haskell</li>
       <li>PostgreSQL</li>
 	  </ul>
+		</md-content>
+		</md-card>
+
+	    
     
     </div>
     <div class="col-sm-3">
       <h3>Hobby</h3>    
-  <ul>	  
+       <ul>	  
         <li>IoT</li>
        <li>Machine Learning/Statistics</li>
        <li>AI</li>
@@ -67,6 +80,8 @@
     </div>
   </div>
 </div>
+
+<% include ./partials/footer.ejs %>
 
 </body>
 </html>
