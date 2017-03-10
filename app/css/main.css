@@ -24,4 +24,13 @@
     border: 2px solid white; }
     .jumbotron .lang-logo img {
       max-width: 100%; }
-
+#primary-header {
+    background-color: #007ed4;
+    background-image: -webkit-radial-gradient(50% top, circle, rgba(84, 141, 181, 0) 0%, rgba(84,141,181,0) 75%),-webkit-radial-gradient(right top, circle, #4aa299 0%, rgba(74,162,153,0) 60%);
+    background-image: radial-gradient(50% top, circle, rgba(84,90,182,0.6) 0%, rgba(84,90,182,0) 75%),radial-gradient(right top, circle, #794aa2 0%, rgba(121,74,162,0) 57%);
+    background-repeat: no-repeat;
+    background-size: 120% 1000px;
+    color: #4aa299;
+    margin: 0;
+    padding: 20px;
+}
