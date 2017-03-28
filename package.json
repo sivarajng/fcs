@@ -1,33 +1,31 @@
 {
-  "name": "fcs-pilot center",
-  "version": "1.0.0",
-  "description": "A webapp for FCS",
-  "engines": {
-    "node": "5.9.1"
-  },
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js"
-  },
-  "dependencies": {
-    "ejs": "2.4.1",
-    "express": "4.13.3",
-	"body-parser": "^1.13.3",
-    "connect-ensure-login": "^0.1.1",
-    "cookie-parser": "^1.3.5",
-    "express-session": "^1.11.3",
-    "morgan": "^1.6.1",
-    "passport": "^0.2.2",
-    "passport-local": "^1.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/sivarajng/fcs"
-  },
-  "keywords": [
-    "node",
-    "heroku",
-    "express"
-  ],
-  "license": "MIT"
+	"name": "node-js-getting-started",
+	"version": "1.0.0",
+	"description": "A webapp for FCS",
+	"engines": {
+		"node": "5.9.1"
+	},
+	"main": "index.js",
+	"scripts": {
+		"start": "node index.js"
+	},
+	"dependencies": {
+		"ejs": "2.4.1",
+		"express": "4.13.3",
+		"body-parser": "1.13.3",
+		"connect-ensure-login": "0.1.1",
+		"cookie-parser": "1.3.5",
+		"express-session": "1.11.3",
+		"morgan": "1.6.1",
+		"passport": "0.2.2",
+		"passport-local": "1.0.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/sivarajng/fcs"
+	},
+	"keywords": ["node",
+	"heroku",
+	"express"],
+	"license": "MIT"
 }
