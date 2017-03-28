@@ -24,6 +24,7 @@
     border: 2px solid white; }
     .jumbotron .lang-logo img {
       max-width: 100%; }
+	  
 #primary-header {
     background-color: #1565C0;
     background-image: -webkit-radial-gradient(50% top, circle, rgba(33, 150, 243, 0.6) 0%, rgba(33, 150, 243, 0) 75%),-webkit-radial-gradient(right top, circle, #03A9F4 0%, rgba(3, 169, 244, 0) 57%);
@@ -36,6 +37,22 @@
 #primary-footer {
     background-color: #1565C0;
     background-image: -webkit-radial-gradient(50% top, circle, rgba(33, 150, 243, 0.6) 0%, rgba(33, 150, 243, 0) 75%),-webkit-radial-gradient(right top, circle, #03A9F4 0%, rgba(3, 169, 244, 0) 57%);
+    background-repeat: no-repeat;
+    background-size: 100% 1000px;
+    color: #64B5F6;
+    margin: 0;
+  }
+	  
+#header {
+    background-color: #0D47A1;
+    background-repeat: no-repeat;
+    background-size: 100% 1000px;
+    color: #64B5F6;
+    margin: 0;
+    position: relative;
+}
+#footer {
+    background-color: #0D47A1;
     background-repeat: no-repeat;
     background-size: 100% 1000px;
     color: #64B5F6;

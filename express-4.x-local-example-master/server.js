@@ -1,6 +1,3 @@
-
-
-
 var express = require('express');
 var passport = require('passport');
 var Strategy = require('passport-local').Strategy;
@@ -48,14 +45,8 @@ passport.deserializeUser(function(id, cb) {
 // Create a new Express application.
 var app = express();
 
-
-
-app.set('port', (process.env.PORT || 5000));
-
-app.use(express.static(__dirname + '/app'));
-
 // Configure view engine to render EJS templates.
-app.set('views', __dirname + '/app');
+app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 // Use application-level middleware for common functionality, including
@@ -72,10 +63,8 @@ app.use(passport.session());
 
 // Define routes.
 app.get('/',
-  require('connect-ensure-login').ensureLoggedIn(),
   function(req, res) {
-	   res.render('index', { user: req.user });
-  //  res.render('home', { user: req.user });
+    res.render('home', { user: req.user });
   });
 
 app.get('/login',
@@ -101,7 +90,4 @@ app.get('/profile',
     res.render('profile', { user: req.user });
   });
 
-
-app.listen(app.get('port'), function() {
-  console.log('Node app is running on port', app.get('port'));
-});
+app.listen(3000);
