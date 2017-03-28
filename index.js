@@ -3,6 +3,12 @@ var passport = require('passport');
 var Strategy = require('passport-local').Strategy;
 var db = require('./db');
 
+const pg = require('pg')  
+const conString = 'postgres://postgres:postgres@localhost/fcs' // make sure to match your own database's credentials
+//const conString = 'postgres://pouochmwjyagce:a31f553c681047235ac5e3e826fe438a1b06b9d4a0f092c5e1301795cca8acb1@ec2-54-228-212-74.eu-west-1.compute.amazonaws.com:5432/d64irttd9v2ril' // make sure to match your own database's credentials
+
+
+
 
 // Configure the local strategy for use by Passport.
 //
@@ -79,6 +85,34 @@ app.get('/login',
   function(req, res){
     res.render('login');
   });
+  
+  app.get('/query',
+  function(req, res,next){
+	  
+	  pg.connect(conString, function (err, client, done) {
+    if (err) {
+      // pass the error to the express error handler
+      return next(err)
+    }
+    client.query('select version();', [], function (err, result) {
+		
+      done()
+
+      if (err) {
+        // pass the error to the express error handler
+       return next(err)
+      }
+
+	  console.log("___||||||___"+JSON.stringify(result.rows));
+      res.json( result.rows);
+    })
+  })
+  
+  
+
+    
+  });
+  
   
 app.post('/login', 
   passport.authenticate('local', { failureRedirect: '/login' }),
