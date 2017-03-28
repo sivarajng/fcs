@@ -9,19 +9,30 @@
 
 <% include ./partials/loginHeader.ejs %>
 
+<div class="container-fluid " style="padding-top:0px;">
+ 
+  <div class="row signin-bg">
+   
+   <div class="col-sm-7" >
+  
+   </div>
+    <div class="col-sm-5" style="background: rgba(250, 250, 250, 0.7);height:600px;" >
+
 <form action="/login" method="post">
-	<div>
-	<label>Username:</label>
-	<input type="text" name="username"/><br/>
-	</div>
-	<div>
-	<label>Password:</label>
-	<input type="password" name="password"/>
-	</div>
-	<div>
-	<input type="submit" value="Submit"/>
-	</div>
+<h1>Welcome</h1>
+<input placeholder="Username" name="username" type="text" required="">
+<input placeholder="Password" name="password" type="password" required="">
+<button>Sign in</button>
 </form>
+
+
+       
+    </div>
+
+  </div>
+</div>
+
+
 
 
 
