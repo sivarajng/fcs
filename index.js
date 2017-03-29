@@ -6,7 +6,7 @@ var db = require('./db');
 const pg = require('pg')  
 const bodyParser = require('body-parser');
 //const conString = 'postgres://postgres:postgres@localhost/fcs' // make sure to match your own database's credentials
-const conString = 'postgres://pouochmwjyagce:a31f553c681047235ac5e3e826fe438a1b06b9d4a0f092c5e1301795cca8acb1@ec2-54-228-212-74.eu-west-1.compute.amazonaws.com:5432/d64irttd9v2ril' // make sure to match your own database's credentials
+ const conString = 'postgres://pouochmwjyagce:a31f553c681047235ac5e3e826fe438a1b06b9d4a0f092c5e1301795cca8acb1@ec2-54-228-212-74.eu-west-1.compute.amazonaws.com:5432/d64irttd9v2ril' // make sure to match your own database's credentials
 
 
 
