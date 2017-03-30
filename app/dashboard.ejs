@@ -3,7 +3,7 @@
 <head>
   <% include ./partials/head.ejs %>
 </head>
-<body>
+<body ng-app="app" ng-controller="ctrl">
 
 
 
@@ -14,7 +14,65 @@
 <aside id="sidebar" class="sidebar sidebar-default open" style="background-color:#082f44;height: 600px;" role="navigation">
  <!-- Sidebar navigation -->
     <ul class="nav sidebar-nav">
-       
+        <li class="dropdown">
+            <a class="ripple-effect dropdown-toggle" href="#" ng-click="showUser()" data-toggle="dropdown">
+                <i class="sidebar-icon md-inbox"></i>
+                 User
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a href="#" tabindex="-1">
+                     <span class="sidebar-badge"></span>
+                        View
+                       
+                    </a>
+                </li>
+                <li>
+                    <a href="#" ng-click="userAdd()" tabindex="-1">
+                     <span class="sidebar-badge"></span>
+                        Add
+                       
+                    </a>
+                </li>
+
+                
+            </ul>
+        </li>
+
+                <li class="dropdown">
+            <a class="ripple-effect dropdown-toggle" href="#" ng-click="showAttendance()" data-toggle="dropdown">
+                <i class="sidebar-icon md-inbox"></i>
+                 Attendance
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a href="#" tabindex="-1">
+                     <span class="sidebar-badge"></span>
+                        View
+                       
+                    </a>
+                </li>
+                <li>
+                    <a href="#" tabindex="-1">
+                     <span class="sidebar-badge"></span>
+                        Edit
+                       
+                    </a>
+                </li>
+               <li>
+                    <a href="#" tabindex="-1">
+                     <span class="sidebar-badge"></span>
+                        Generate
+                       
+                    </a>
+                </li>
+                
+            </ul>
+        </li>
+
+               <li class="divider"></li>
         <li>
             <a href="#">
                 <i class="sidebar-icon md-inbox"></i>
@@ -35,24 +93,7 @@
             </a>
         </li>
         
-        <li class="divider"></li>
-        <li class="dropdown">
-            <a class="ripple-effect dropdown-toggle" href="#" data-toggle="dropdown">
-                <i class="sidebar-icon md-inbox"></i>
-                 Attendance
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-                <li>
-                    <a href="#" tabindex="-1">
-                     <span class="sidebar-badge"></span>
-                        Attendance
-                       
-                    </a>
-                </li>
-                
-            </ul>
-        </li>
+
        
     </ul>
     <!-- Sidebar divider -->
@@ -70,11 +111,11 @@
  
   <div class="row ">
    
-   <div class="col-sm-12" >
+   <div class="col-sm-12" id="user">
    <md-card>
     <md-card-header style="background-color: #0288d1;">
     <md-title>
-     Welcome User
+     YOU ARE USER
     </md-title>
     </md-card-header>
      <md-content>
@@ -94,7 +135,49 @@
    </md-card>
 
    </div>
-   
+      <div class="col-sm-12" id="attendance">
+   <md-card>
+    <md-card-header style="background-color: #0288d1;">
+    <md-title>
+     UPDATE attendance 
+    </md-title>
+    </md-card-header>
+     <md-content>
+     This is the Dashboard<br/>
+
+      This is the Dashboard<br/>
+       This is the Dashboard<br/>
+        This is the Dashboard<br/>
+         This is the Dashboard<br/>
+     This is the Dashboard<br/>
+     This is the Dashboard<br/>
+     This is the Dashboard<br/>
+     This is the Dashboard<br/>
+     
+     <a href="/logout">SIGNOUT</a>
+ </md-content>
+   </md-card>
+
+   </div>
+
+         <div class="col-sm-12" id="userAdd">
+   <md-card>
+    <md-card-header style="background-color: #0288d1;">
+    <md-title>
+     Add User
+    </md-title>
+    </md-card-header>
+     <md-content>
+     <form >
+
+<input placeholder="FirstName" name="username" type="text" required="">
+<input placeholder="Mobile" name="mobile" type="number" required="">
+<button>Add</button>
+</form>
+ </md-content>
+   </md-card>
+
+   </div>
 
   </div>
 </div>
