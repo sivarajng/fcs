@@ -2,22 +2,16 @@ var app = angular.module("app", ["ngRoute"]);
 app.config(function($routeProvider) {
     $routeProvider
     .when("/", {
-        templateUrl : "/partials/dash"
-        , controller: 'ctrl' 
+        templateUrl : "/views/dash"
+       
     })
     .when("/settings", {
-        templateUrl : "/partials/settings"
-        , controller: 'ctrl' 
+        templateUrl : "/views/settings"
+       
     })
     .when("/calender", {
-        templateUrl : "/partials/calender"
-        , controller: 'ctrl' 
-    })
-    .when("/green", {
-        templateUrl : "green.htm"
-    })
-    .when("/blue", {
-        templateUrl : "blue.htm"
+        templateUrl : "/views/calender"
+       
     });
 });
 
