@@ -1,7 +1,6 @@
 const express = require('express');
 const passport = require('passport');
 const Strategy = require('passport-local').Strategy;
-const flash = require('connect-flash');
 const db = require('./db');
 const routes = require('./routes');
 const pg = require('pg')
@@ -21,10 +20,6 @@ passport.use(new Strategy(
   function (username, password, cb) {
     db.users.findByUsername(username, function (err, user) {
       if (err) { return cb(err); }
-      // if (!user) { return cb(null, false, { message: 'Invalid User ' + username }); }
-      // if (user.password != password) { return cb(null, false, { message: 'Invalid password' }); }
-    //  if (!user) { return cb(null, false, req.flash('signupMessage', 'invalid USER')); }
-    //  if (user.password != password) { return cb(null, false, req.flash('signupMessage', 'invalid PASSRD')); }
       if (!user) { return cb(null, false); }
       if (user.password != password) { return cb(null, false); }
       return cb(null, user);
@@ -61,7 +56,6 @@ app.set('views', __dirname + '/app');
 // Configure view engine to render EJS templates.
 app.set('view engine', 'ejs');
 
-app.use(flash());
 // Use application-level middleware for common functionality, including
 // logging, parsing, and session handling.
 app.use(require('morgan')('combined'));
@@ -84,6 +78,10 @@ app.get('/login',
   routes.login
 );
 
+app.get('/loginerr',
+  routes.loginerr
+);
+
 app.get('/logout',
   routes.logout
 );
@@ -96,9 +94,7 @@ app.get('/views/:filename',
 app.post('/login',
   passport.authenticate('local', {
     successRedirect: '/',
-    failureRedirect: '/login',
-    // failureMessage: "Invalid username or password"
-    failureFlash: true
+    failureRedirect: '/loginerr'
   }),
   routes.loginpost
 );
@@ -109,6 +105,10 @@ app.get('/query',
 
 app.post('/querypost',
   routes.querypost
+);
+
+app.get('/test',
+  routes.test
 );
 
 app.listen(app.get('port'), function () {

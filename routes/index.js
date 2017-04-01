@@ -12,11 +12,11 @@ exports.index = function (req, res) {
 };
 
 exports.login = function (req, res) {
-  // res.render('login', { login_errors: req.session.messages || [] });
-  // req.session.messages = [];
-  res.render('login',{ message: req.flash('signupMessage') });
- // res.render('login');
+ res.render('login');
+};
 
+exports.loginerr = function (req, res) {
+ res.render('loginerr');
 };
 
 exports.logout = function (req, res) {
@@ -56,4 +56,8 @@ exports.querypost = function (req, res, next) {
 
 
   })
+};
+
+exports.test = function (req, res) {
+  res.render('test');
 };

@@ -69,7 +69,8 @@ background-image:url('/images/signin_background_4.jpg');
 }
  
 
-/**/
+/*Login input form*/
+/*
 h1 {
   height: 100px;
   width: 100%;
@@ -150,4 +151,5 @@ input:focus::-webkit-input-placeholder, input:valid::-webkit-input-placeholder {
           transform: translateY(-20px);
   visibility: visible !important;
 }
+*/
 /**/

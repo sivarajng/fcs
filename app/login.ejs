@@ -3,7 +3,7 @@
 <head>
   <% include ./partials/head.ejs %>
 </head>
-<body>
+<body ng-app="login" ng-controller="loginctrl">
 
 
 
@@ -18,15 +18,33 @@
    </div>
     <div class="col-sm-5" style="background: rgba(250, 250, 250, 0.7);height:600px;" >
 
-<form action="/login" method="post">
-<h1>Welcome</h1>
-<input placeholder="Username" name="username" type="text" required="">
-<input placeholder="Password" name="password" type="password" required="">
-
-
-
-<button>Sign in</button>
-</form>
+<md-card >
+  <md-card-header>
+    <md-title>
+      Welcome
+    </md-title>
+  </md-card-header>
+<md-content style="padding: 10px;">
+  <form action"/login" method="post">
+          <md-input-container flex="50">
+            <label>Username</label>
+            <input type="text" required="" name="username" ng-model="project.username">
+            <div ng-messages="projectForm.username.$error">
+              <div ng-message="required">This is required.</div>
+            </div>
+         </md-input-container>
+         <md-input-container flex="50">
+            <label>Password</label>
+            <input type="password" required="" name="password" ng-model="project.password">
+            <div ng-messages="projectForm.password.$error">
+              <div ng-message="required">This is required.</div>
+            </div>
+         </md-input-container>
+         <button>Sign in</button>
+         <md-button type="submit" class="md-raised md-primary">Sign in</md-button>
+  </form>
+</md-content>
+</md-card>
 
 
        
