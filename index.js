@@ -2,12 +2,13 @@ var express = require('express');
 var passport = require('passport');
 var Strategy = require('passport-local').Strategy;
 var db = require('./db');
+var routes = require('./routes');
 
 const pg = require('pg')  
 const bodyParser = require('body-parser');
 
-//const conString = 'postgres://postgres:postgres@localhost/fcs' // make sure to match your own database's credentials
- const conString = 'postgres://pouochmwjyagce:a31f553c681047235ac5e3e826fe438a1b06b9d4a0f092c5e1301795cca8acb1@ec2-54-228-212-74.eu-west-1.compute.amazonaws.com:5432/d64irttd9v2ril' // make sure to match your own database's credentials
+const conString = 'postgres://postgres:postgres@localhost/fcs' // make sure to match your own database's credentials
+//  const conString = 'postgres://pouochmwjyagce:a31f553c681047235ac5e3e826fe438a1b06b9d4a0f092c5e1301795cca8acb1@ec2-54-228-212-74.eu-west-1.compute.amazonaws.com:5432/d64irttd9v2ril' // make sure to match your own database's credentials
 
 
 
@@ -56,7 +57,7 @@ var app = express();
 
 
 app.set('port', (process.env.PORT || 5000));
-app.use(bodyParser.urlencoded({ extended: false }));
+//app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.static(__dirname + '/app'));
 
@@ -79,16 +80,18 @@ app.use(passport.session());
 // Define routes.
 app.get('/',
   require('connect-ensure-login').ensureLoggedIn(),
-  function(req, res) {
-	   res.render('dashboard', { user: req.user });
-  //  res.render('home', { user: req.user });
-  });
+  routes.index
+  );
+
 
 app.get('/login',
   function(req, res){
     res.render('login',{ user: req.user });
   });
   
+app.get('/partials/:filename', 
+ routes.partials); 
+
 app.get('/query',
   function(req, res){
     res.render('query');
@@ -139,6 +142,24 @@ app.get('/profile',
   function(req, res){
     res.render('profile', { user: req.user });
   });
+
+app.get('/dash',
+  require('connect-ensure-login').ensureLoggedIn(),
+  function(req, res){
+    res.render('dash');
+  });
+
+app.get('/calender',
+  require('connect-ensure-login').ensureLoggedIn(),
+  function(req, res){
+    res.render('calender');
+  });
+
+app.get('/settings',
+  require('connect-ensure-login').ensureLoggedIn(),
+  function(req, res){
+    res.render('settings');
+  });    
 
 
 app.listen(app.get('port'), function() {

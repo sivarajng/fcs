@@ -74,20 +74,20 @@
 
                <li class="divider"></li>
         <li>
-            <a href="#">
+            <a href="/#!/">
                 <i class="sidebar-icon md-inbox"></i>
                 Attendance
             </a>
         </li>
         
         <li>
-            <a href="#">
+            <a href="/#!/calender">
                 <i class="sidebar-icon md-star"></i>
                 Calender
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="/#!/settings">
                 <i class="sidebar-icon md-send"></i>
                Settings
             </a>
@@ -110,7 +110,19 @@
 <div class="container" style="padding-top:0px;background-color:#eeeeee;">
  
   <div class="row ">
-   
+  <a href="#/about"> /about</a> |
+  <a href="/#about"> /#about</a> |
+  <a href="/about"> /about</a> |
+  <a href="#about"> #about</a> |
+  <a href="/#!/about"> /#!/about</a> |
+  <a href="/#/about"> /#/about</a> |
+  <a href="about"> about</a> |
+  <a href="/"> home</a>
+  <!-- uncomment if HTML5Mode on -->
+  <!-- <a href="/about"> /about</a> | -->
+  <!-- <a href="/"> home</a> -->
+  <hr />
+  <div ng-view></div>
    <div class="col-sm-12" id="user">
    <md-card>
     <md-card-header style="background-color: #0288d1;">
@@ -178,6 +190,7 @@
    </md-card>
 
    </div>
+
 
   </div>
 </div>
