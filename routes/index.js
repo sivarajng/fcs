@@ -58,6 +58,36 @@ exports.querypost = function (req, res, next) {
   })
 };
 
-exports.test = function (req, res) {
+exports.test = function (req, res,next) {
   res.render('test');
+};
+
+exports.addUser = function(req,res,next){
+
+  console.log(req.body.firstName);
+  console.log(req.body);
+   var ffnn = req.body.firstName+'.'+req.body.lastName;
+  var sql = "INSERT INTO fcs.users(id,username) VALUES (99,'"+ffnn+"');";
+  pg.connect(pgConString, function (err, client, done) {
+    if (err) {
+      // pass the error to the express error handler
+      return next(err)
+    }
+    client.query(sql, [], function (err, result) {
+
+      done()
+
+      if (err) {
+        // pass the error to the express error handler
+        return next(err)
+      }
+
+      console.log("___INSERT___" + JSON.stringify(result.rows));
+      res.json(result.rows);
+    })
+
+
+  })
+
+
 };

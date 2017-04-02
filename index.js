@@ -111,6 +111,11 @@ app.get('/test',
   routes.test
 );
 
+app.post('/addUser',
+routes.addUser
+);
+
+
 app.listen(app.get('port'), function () {
   console.log('Node app is running on port', app.get('port'));
 });

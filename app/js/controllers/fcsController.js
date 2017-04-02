@@ -1,22 +1,4 @@
-var app = angular.module("app", ["ngRoute",'ngMaterial', 'ngMessages']);
-
-app.config(function($routeProvider) {
-    $routeProvider
-    .when("/", {
-        templateUrl : "/views/dash"
-       
-    })
-    .when("/settings", {
-        templateUrl : "/views/settings"
-       
-    })
-    .when("/calender", {
-        templateUrl : "/views/calender"
-       
-    });
-});
-
-app.controller('ctrl',function($scope,$document){
+app.controller('fcsController',function($scope,$document){
 var user = angular.element($document[0].querySelector('#user'));
 var userAdd = angular.element($document[0].querySelector('#userAdd'));
 var attendance = angular.element($document[0].querySelector('#attendance'));
